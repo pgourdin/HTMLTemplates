@@ -1,0 +1,59 @@
+<!doctype html>
+
+<!--  In a well-formed HTML5 document, the root element must
+      be the <html> element. It's first child can only be the
+      <head> element. It's second child can only be the <body>
+      element.
+
+      The "lang" attribute is a global attribute. There is a
+      convention to indicate the primary language of the document
+      by setting the lang attribute of the root "html" element.
+      Thus, it is considered part of the bare minimum template. -->
+
+<html lang="en">
+
+  <!--  The <head> element can contain: meta data, using the <meta>
+        element; embedded javascript, using the <script> element;
+        embedded CSS style information, using the <style> element;
+        <link> elements, which are used exclusively, in modern usage,
+        to link external style sheets to the current document; the
+        mandatory <title> element; and, the <base> element, which is
+        used to indicate the base URL for all relative URL references
+        in the document.
+
+        In general, it is considered best practices to segregate all
+        style code in external .css files, that are referenced through
+        <link> elements, and all javascript in external .js files, that
+        are referenced through empty <script> elements (using the "src"
+        attribute). -->
+
+  <head>
+
+    <!--  The <meta charset ...> element specifies the character encoding
+          for the document. The value "UTF-8" specifies that the document
+          is encoded in a common Unicode encoding. Even though "UTF-8" is
+          the default for HTML5, it is still considered good form to specify
+          it explicitly. (The default before HTML5 used to be "ISO-8859-1".) -->
+    
+    <meta charset="UTF-8">
+    <title>2 Bare Minimum</title>
+  </head>
+
+  <!--  The <body> element is the parent element for all displayable
+        content of the HTML document. As we saw in the absurd minimum,
+        the <body> element is not strictly required explicitly; it will
+        be generated implicitly if absent. As such, it makes more sense
+        to make it explicit. -->
+
+  <body>
+
+    <!--  The <p> element semantically represents a paragraph of text.
+          Historically, text has been the primary content data of HTML
+          documents, and <p> elements represent the most common block
+          level text element. -->
+
+    <p>This is the barest of templates, with no external CSS style or javascript files. This does not support browser specific workarounds (such as accomodations for IE). This does not reset the default browser styles.</p>
+    <p>Because we are using the UTF-8 charset, we can embed general unicode text strings in the document, such as الحب, which is the Arabic word for love.</p>
+    <p>&copy; 2014-2015 Paul Gourdin</p>
+  </body>
+</html>
