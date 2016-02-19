@@ -1,59 +1,103 @@
 <!doctype html>
+<html lang="en">                          <!--  (1, 2, 3) -->
+  <head>                                  <!--  (4)       -->
+    <meta charset="UTF-8" />              <!--  (2, 5, 6) -->
+    <title>2 Bare Minimum</title>
+  </head>
+  <body>                                  <!--  (7)       -->
+  </body>
+</html>
 
-<!--  In a well-formed HTML5 document, the root element must
+<!--
+
+  Template Note:
+
+      This template is the bare minimum for a well-formed HTML
+      document. It does not include any CSS or Javascript links.
+      As such, it should be used only for simple, static HTML
+      documents that use all default styles and behavior.
+
+  Some Concepts and Terminology:
+
+      global attributes - the set of attributes in the HTML
+      specification that can be applied to any element. The
+      most commonly used global attributes related to the
+      semantics of elements include: class, id, dir, lang
+      (and xml:lang). Most of the others are related to
+      interactive aspects of the content. Of special note,
+      though, is that the style attribute should no longer
+      be used (relying on external CSS style sheets alone).
+
+  Numbered Inline Comments:
+
+  (1)
+
+      In a well-formed HTML5 document, the root element must
       be the <html> element. It's first child can only be the
       <head> element. It's second child can only be the <body>
       element.
 
+  (2)
+
       The "lang" attribute is a global attribute. There is a
       convention to indicate the primary language of the document
-      by setting the lang attribute of the root "html" element.
-      Thus, it is considered part of the bare minimum template. -->
+      by setting the lang attribute of the root "html" element;
+      thus, it is considered part of the bare minimum template.
+      If the lang attribute is not present on the html tag the
+      browser (or web crawler) will do a best effort attempt at
+      divining the base language with the existing text content.
 
-<html lang="en">
+  (3)
 
-  <!--  The <head> element can contain: meta data, using the <meta>
-        element; embedded javascript, using the <script> element;
-        embedded CSS style information, using the <style> element;
-        <link> elements, which are used exclusively, in modern usage,
-        to link external style sheets to the current document; the
-        mandatory <title> element; and, the <base> element, which is
-        used to indicate the base URL for all relative URL references
-        in the document.
+      This is the first example of an element attribute. Although
+      not strictly required, it is good practice to surround all
+      attribute values with double quotes. Attributes are
+      separated by spaces within the element header. For empty
+      elements, the closing "/>" must be separated by a space
+      from the last attribute. For example,
+      
+        <tag attr="value" attr="value" />
 
-        In general, it is considered best practices to segregate all
-        style code in external .css files, that are referenced through
-        <link> elements, and all javascript in external .js files, that
-        are referenced through empty <script> elements (using the "src"
-        attribute). -->
+  (4)
 
-  <head>
+      The <head> element can contain: meta data, using the <meta>
+      element; embedded javascript, using the <script> element;
+      embedded CSS style information, using the <style> element;
+      <link> elements, which are used exclusively, in modern usage,
+      to link external (CSS) style sheets to the current document;
+      the mandatory <title> element; and, the <base> element, which
+      is used to indicate the base URL for all relative URL references
+      in the document.
 
-    <!--  The <meta charset ...> element specifies the character encoding
-          for the document. The value "UTF-8" specifies that the document
-          is encoded in a common Unicode encoding. Even though "UTF-8" is
-          the default for HTML5, it is still considered good form to specify
-          it explicitly. (The default before HTML5 used to be "ISO-8859-1".) -->
-    
-    <meta charset="UTF-8">
-    <title>2 Bare Minimum</title>
-  </head>
+      In general, it is considered best practices to segregate all
+      style code in external .css files, that are referenced through
+      <link> elements, and all javascript in external .js files, that
+      are referenced through empty <script> elements (using the "src"
+      attribute).
 
-  <!--  The <body> element is the parent element for all displayable
-        content of the HTML document. As we saw in the absurd minimum,
-        the <body> element is not strictly required explicitly; it will
-        be generated implicitly if absent. As such, it makes more sense
-        to make it explicit. -->
+  (5)
 
-  <body>
+      The <meta charset ...> element specifies the character encoding
+      for the document. The value "UTF-8" specifies that the document
+      is encoded in a common Unicode encoding. Even though "UTF-8" is
+      the default for HTML5, it is still considered good form to specify
+      it explicitly. (The default before HTML5 used to be "ISO-8859-1".)
 
-    <!--  The <p> element semantically represents a paragraph of text.
-          Historically, text has been the primary content data of HTML
-          documents, and <p> elements represent the most common block
-          level text element. -->
+  (6)
 
-    <p>This is the barest of templates, with no external CSS style or javascript files. This does not support browser specific workarounds (such as accomodations for IE). This does not reset the default browser styles.</p>
-    <p>Because we are using the UTF-8 charset, we can embed general unicode text strings in the document, such as الحب, which is the Arabic word for love.</p>
-    <p>&copy; 2014-2015 Paul Gourdin</p>
-  </body>
-</html>
+      The <meta charset ...> element must be within the first 1024
+      bytes in the HTML file. To ensure this, always have this element
+      be the first child under <head>. (Note, that as of 1/2016 the W3
+      org validator will give an error message if it is not within the
+      first 512 characters, an older standard.)
+
+  (7)
+
+      The <body> element is the parent element for all presentable
+      content of the HTML document. As we saw in the absurd minimum,
+      the <body> element is not strictly required explicitly; it will
+      be generated implicitly if absent. However, it makes more sense
+      to make it explicit.
+
+copyright 2014-2016 Paul Gourdin
+-->
