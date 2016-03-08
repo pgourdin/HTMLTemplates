@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">   <!--  (1, 2)  -->
+  <head>
+    <meta charset="UTF-8" />                                <!--  (3)     -->
+    <title>2a Bare XHTML5 Minimum</title>
+  </head>
+  <body>
+    <p>copyright 2014-2016 Paul Gourdin</p>
+  </body>
+</html>
+
+<!--
+
+  Template Note:
+
+      This template is the bare minimum for a well-formed XHTML5
+      document. It does not include any CSS or Javascript links.
+      As such, it should be used only for simple, static XHTML
+      documents that use all default styles and behavior.
+
+  Numbered Inline Comments:
+
+  (1)
+
+      XHTML5 is an XML document markup language. The "xmlns" attribute
+      specifies the standard XHTML namespace. Note also that for XHTML5
+      the DOCTYPE keyword must be all upper case.
+
+  (2)
+
+      The "xml:lang" attribute is a global attribute. In XHTML5
+      documents this should be used rather than "lang", in order
+      for the proper XML parsing of the document.
+
+  (3)
+
+      All XHTML5 documents must be well-formed XML documents, which
+      means: 1) all empty elements (such as the <meta> element here)
+      must be properly closed with a trailing " />" (note the space
+      between the attribute value end-quote and the closing tag);
+      2) all non-empty elements must have a closing tag; 3) all
+      attribute values must be properly enclosed in double quotes;
+      4) not all named entities are supported (e.g., "&copy;" is not).
+-->
