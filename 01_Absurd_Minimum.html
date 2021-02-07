@@ -35,39 +35,43 @@
       to specify the dynamic and interactive aspect of the content.
 
       An HTML document consists of a doctype declarator
-      followed by a set of HTML elements. The basic logocial
+      followed by a set of HTML elements. The basic logical
       structure of a document is a tree with a root element,
-      named "html". The root html element always has exactly
-      two children elements: the "head" element and the "body"
+      with the <html>. The root html element always has exactly
+      two children elements: the <head> element and the <body>
       element.
 
       HTML elements follow one of two basic textual patterns:
-        <element-tag attributes>content</element-tag>
+        <tag attributes>contents</tag>
       or
-        <element-tag attributes />
+        <tag attributes />
 
-      The latter elements are called 'empty elements' and do not
-      have any explicit content. The former can have content
-      that consists of text and/or other elements. Note that
-      there are some elements (e.g., <br>, <img>, etc.) that
-      can only be empty elements.
+      The latter elements are called 'void elements' (aka,
+      'empty elements') and do not have any explicit contents.
+      The former can have contents that consist of text and/or
+      child elements. Note that there are some elements (e.g.,
+      <br>, <img>, etc.) that can only be void elements. The
+      parsing of the element's tag itself is case insensitive.
+      There is a distinction between an HTML 'tag' and 'element':
+      the former refers to the type name of the elment; whereas,
+      the latter refers to the tag, the accompanying attributes,
+      and the contents of the element.
 
       Attributes are key=value pairs. Attributes provide a way
-      to further describe an element and its content. Some
+      to further describe an element and its contents. Some
       attributes provide ways to further define the element's
-      content itself (such as defining the URI for an image
-      element). Other attributes are used to provide meta-data
-      about the element. Such meta-data can be used to refine
-      semantic information about the element and/or provide
-      information that can be used for presentational purposes
-      (i.e., CSS) or dynamic purposes (i.e., Javascript).
+      contents (such as defining the URI for an image element).
+      Other attributes are used to provide meta-data about the
+      element. Such meta-data can be used to refine semantic
+      information about the element and/or provide information
+      that can be used for presentational purposes (i.e., CSS)
+      or dynamic purposes (i.e., Javascript).
 
       In general, there is meant to be a strict separation of
-      purpose for head elements versus body elements. All content
-      that is in elements contained in the head sub-tree represent
-      document related meta-data (including CSS and Javascript
-      data). All content that is in elements contained in the
-      body sub-tree represent presented data.
+      purpose for head elements versus body elements. All contents
+      of the <head> sub-tree represent document related meta-data
+      (including CSS and Javascript data). All contents in the
+      <body> sub-tree represent presented data.
 
       For purposes of describing HTML documents and HTML elements,
       along with the respective CSS and Javascript support, this
@@ -96,30 +100,35 @@
       and terminology, presented henceforth, throughout all templates
       as necessary:
 
-      Document Object Model (DOM) - used by CSS to apply presentation
+      Document Object Model (DOM) - is used by CSS to apply presentation
       styles to target classes of elements and unique instances of
-      elements. It is used by Javascript to allow the programmatic
+      elements. DOM is used by Javascript to allow the programmatic
       perusal and dynamic manipulation of the document data. It makes
       concrete the tree-hierarchy structural model of the HTML document.
 
       Quirks Mode - Browsers will go into 'quirks mode' in displaying
       an HTML document when they encounter 'malformed' HTML or HTML
       code that predates HTML W3C standards. The quirks mode represents
-      non-standard presentation and interaction, often that that predates
+      non-standard presentation and interaction, most of which predates
       IE 6.
 
   Numbered Inline Comments:
 
   (1)
 
-      The doctype indicates that this is an HTML document
-      file. The HTML5 standard did away with all of the
-      extraneous DTD information present in doctype declarations
-      in past versions (including html and xhtml document types),
-      opting for a simple, clean approach. The doctype is not an
-      element, although it looks like one. It is best to think
-      of it as the first--and necessary--text line of the HTML
-      file.
+      The doctype line indicates to a browser rendering this file
+      that it is an HTML document. HTML is a markup language that
+      was originally designed to follow the Standard Generalized
+      Markup Language (SGML) standard. The doctype specifies which
+      Document Type Definition (DTD) is to be used to parse and
+      validate the HTML file. The doctype line is not an actual
+      part of HTML, and must be the first line of the file.
+
+      Originally, there were multiple doctypes, representing
+      acceptable versions of HTML (including treating HTML files
+      as XML). The HTML5 standard did away with all of the extraneous
+      DTD information present in those doctype declarations, opting
+      for a simple, clean approach.
 
       Note: IE does not tolerate a comment before the doctype. It
       will go into quirks mode if there is anything before the
@@ -132,13 +141,12 @@
 
   (3)
 
-      There is only one mandatory 'head' element: the <title>
-      element. The element's content is the text of the title.
-      The only content permitted is text. The title is displayed
-      in the browser toolbar and is used as the text for the page
-      as added to browser 'favorites' and search engine results.
-      It is the only meta-data that is presented in some way for
-      the document.
+      There is only one mandatory 'head' child element: the <title>
+      element. The element's content is the text of the title. The
+      only content permitted is text. The title is displayed in the
+      browser toolbar and is used as the text for the page as added
+      to browser 'favorites' and search engine results. It is the
+      only meta-data that is presented in some way for the document.
 
-  copyright 2014-2016 Paul Gourdin
+  copyright 2014-2018 Paul Gourdin
 -->

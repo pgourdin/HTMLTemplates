@@ -1,0 +1,519 @@
+<!doctype html>
+
+<!--  HTML5 is a document markup language. The root element of all
+      HTML documents is the "html" element.
+
+      The "lang" attribute is a 'global attribute' (which means that
+      it can be applied to any element, and not just the <html> element).
+      There is a convention to indicate the primary language of the
+      document by setting the lang attribute of the root "html" element.
+      Thus, it is considered part of the bare minimum template. -->
+
+<html lang="en">
+
+  <!--    The html element has two canonical child elements: <head>
+          and <body>. The <head> element contains all of the HTML
+          document's meta information, as well as embedded CSS and
+          javascript. The <body> contains the displayable content.
+
+          The <head> element can contain: meta data, using the <meta>
+          element; embedded javascript, using the <script> element;
+          embedded CSS style information, using the <style> element;
+          <link> elements, which are used exclusively, in modern usage,
+          to link external style sheets to the current document; the
+          mandatory <title> element; and, the <base> element, which is
+          used to indicate the base URL for all relative URL references
+          in the document.
+
+          In general, it is considered best practices to segregate all
+          style code in external .css files, that are referenced through
+          <link> elements, and all javascript in external .js files, that
+          are referenced through empty <script> elements. -->
+
+  <head>
+
+    <!--  The <meta charset ...> element specifies the character encoding
+          for the document. The value "UTF-8" specifies that the document
+          is encoded in a common Unicode encoding. Even though "UTF-8" is
+          the default for HTML5, it is still considered good form to specify
+          it explicitly. (The default before HTML5 used to be "ISO-8859-1".) -->
+    
+    <meta charset="UTF-8">
+    <title>2 Bare Minimum</title>
+  </head>
+
+  <!--  The <body> element is a mandatory element of a well-formed HTML
+        document and represents the parent element for all displayable
+        content of the HTML document. As we saw in the absurd minimum,
+        the <body> element is not strictly required explicitly; it will
+        be generated implicitly if absent. As such, it makes more sense
+        to make it explicit. -->
+
+  <body>
+    <header>
+      <h1>Bare Minimum HTML5 Template</h1>
+    </header>
+    <h2>Summary</h2>
+    <p>The barest of templates, with no external CSS style or javascript files. This does not support browser specific workarounds (such as accomodations for IE). This does not reset the default styles.</p>
+
+    <!-- SAMPLE ELEMENTS 
+
+         The sample elements below are not always explicitly documented here, because
+         they are primarily content based, versus structural. -->
+
+    <hr>
+    <article>
+      <h2>&lt;h2&gt; Example Elements</h2>
+      <p>The following represent samples of most (but not all) HTML5 elements. This is meant to showcase formatting of standard elements as well as progress through the HTML/CSS templates. Other than this paragraph, and element descriptions, sample text is from Machiavelli's The Prince, and is not meant to be descriptive, but, merely, to appear as realistic text.</p>
+      <h3>&lt;h3&gt; Inline Elements (Phrasing Content)</h3>
+        <ul>
+          <li><code>&lt;a&gt;</code> named anchor, <a id="namedAnchor">such as this</a></li>
+          <li><code>&lt;a&gt;</code> hypertext link to external URI, <a href="http://www.w3schools.com/tags/tag_a.asp">such as this</a></li>
+          <li><code>&lt;abbr&gt;</code> Some browsers, when hovering over an abbreviation, such as <abbr title="Cascading Style Sheets">CSS</abbr>, will display the text of the <code>title</code> attribute.</li>
+
+          <!-- The <bdi> and <bdo> elements are used to indicate that the contained
+               text may (bdi) or will (bdo) contain bidirectional text that differs
+               from the surrounding text. This is a structural/content designation,
+               although, based on the direction attribute, does contain formatting
+               information (i.e., directional flow).
+
+               The difference between <bdi> and <bdo> is one of intent. The <bdi>
+               element allows for different bidirectional text, but is often used
+               for cases where the the HTML code is generated automatically and the
+               actual text content can be different languages. In other words, the
+               text may or may not have different directionality. -->
+          
+          <li><code>&lt;bdi&gt;</code> and <code>&lt;bdo&gt;</code> This "מוֹעִיל" is the hebrew word for "helpful". For the sake of demonstrating what problem bdo and bdi elements are trying to solve, consider the sample HTML text "<code>what is flexible is helpful - 1</code>". The problem is the browser's understanding that the "- 1" should 'follow' the word "helpful". The bdo element is required to have the dir attribute. So, here are each of the different ways that bdo and bdi are used:
+            <table>
+              <tr>
+                <td><code><strong>HTML code</strong></code></td>
+                <td>(as)</td>
+                <td><strong>Rendered Text</strong></td>
+                <td>(with)</td>
+                <td><strong>Comments</strong></td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is helpful - 1</code></td>
+                <td></td>
+                <td>what is flexible is helpful - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is מוֹעִיל - 1</code></td>
+                <td></td>
+                <td>what is flexible is מוֹעִיל - 1</td>
+                <td></td>
+                <td>the "1 -" is rendered rtl with hebrew word</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdi&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdi>מוֹעִיל</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdi dir="auto"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdi dir="auto">מוֹעִיל</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdi dir="ltr"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdi dir="ltr">מוֹעִיל</bdi> - 1</td>
+                <td></td>
+                <td>dir attribute ignored???</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdi dir="rtl"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdi dir="rtl">מוֹעִיל</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdo dir="auto"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdo dir="auto">מוֹעִיל</bdo> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdo dir="ltr"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdo dir="ltr">מוֹעִיל</bdo> - 1</td>
+                <td></td>
+                <td>hebrew word explicitly wrong direction</td>
+              </tr>
+              <tr>
+                <td><code>what is flexible is &lt;bdo dir="rtl"&gt;<bdo dir="rtl">מוֹעִיל</bdo>&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>what is flexible is <bdo dir="rtl">מוֹעִיל</bdo> - 1</td>
+                <td></td>
+                <td>"- 1" is rendered rtl, which is wrong</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש מועיל - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש מועיל - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש helpful - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש helpful - 1</td>
+                <td></td>
+                <td>the "1 -" is rendered ltr with english word</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdi&gt;helpful&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdi>helpful</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdi dir="auto"&gt;helpful&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdi dir="auto">helpful</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdi dir="ltr"&gt;helpful&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdi dir="ltr">helpful</bdi> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdi dir="rtl"&gt;helpful&lt;/bdi&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdi dir="rtl">helpful</bdi> - 1</td>
+                <td></td>
+                <td>dir attribute ignored???</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdo dir="auto"&gt;helpful&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdo dir="auto">helpful</bdo> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdo dir="ltr"&gt;helpful&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdo dir="ltr">helpful</bdo> - 1</td>
+                <td></td>
+                <td>wrong</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;bdo dir="rtl"&gt;helpful&lt;/bdo&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <bdo dir="rtl">helpful</bdo> - 1</td>
+                <td></td>
+                <td>english word explicitly wrong direction</td>
+              </tr>
+              <tr>
+                <td><code>מה הוא גמיש &lt;span dir="auto"&gt;helpful&lt;/span&gt; - 1</code></td>
+                <td></td>
+                <td>מה הוא גמיש <span dir="auto">helpful</span> - 1</td>
+                <td></td>
+                <td>Correct</td>
+              </tr>
+            </table>
+
+          <li><code>&lt;br&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          <li><code>&lt;a&gt;</code></li>
+          
+          <li>  (an abbreviation;
+         <code>abbr</code> markup used)
+          <li> <acronym title="radio detecting and ranging">radar</acronym> (an acronym; <code>acronym</code> markup used)
+          <li> <b>bolded</b> (<code>b</code> markup used - just bolding with unspecified
+               semantics)
+          <li> <big>big thing</big> (<code>big</code> markup used)
+          <li> <font size=6>large size</font> (<code>font size=6</code> markup used)
+          <li> <font face=Courier>Courier font</font> (<code>font face=Courier</code> markup used)
+          <li> <font color=red>red text</font> (<code>font color=red</code> markup used)
+          <li> <cite>Origin of Species</cite> (a book title;
+               <code>cite</code> markup used)
+          <li> <code>a[i] = b[i] + c[i);</code> (computer code; <code>code</code> markup used)
+          <li> here we have some <del>deleted</del> text (<code>del</code> markup used)
+          <li> an <dfn>octet</dfn> is an entity consisting of eight bits
+               (<code>dfn</code> markup used for the term being defined)
+          <li> this is <em>very</em> simple (<code>em</code> markup used for emphasizing
+               a word)
+          <li> <i lang="la">Homo sapiens</i> (should appear in italics;  <code>i</code> markup used)
+          <li> here we have some <ins>inserted</ins> text (<code>ins</code> markup used)
+          <li> type <kbd>yes</kbd> when prompted for an answer (<code>kbd</code> markup
+               used for text indicating keyboard input)
+          <li> <q>Hello!</q> (<code>q</code> markup used for quotation)
+          <li> He said: <q>She said <q>Hello!</q></q> (a quotation inside a quotation)
+          <li> you may get the message <samp>Core dumped</samp> at times
+               (<code>samp</code> markup used for sample output)
+          <li> <small>this is not that important</small> (<code>small</code> markup used)
+          <li> <strike>overstruck</strike> (<code>strike</code> markup used; note:
+               <code>s</code> is a nonstandard synonym for <code>strike</code>)
+          <li> <strong>this is highlighted text</strong> (<code>strong</code>
+               markup used)
+          <li> In order to test how subscripts and superscripts (<code>sub</code> and
+               <code>sup</code> markup) work inside running text, we need some
+               dummy text around constructs like x<sub>1</sub> and H<sub>2</sub>O
+               (where subscripts occur). So here is some fill so that
+               you will (hopefully) see whether and how badly the subscripts
+               and superscripts mess up vertical spacing between lines.
+               Now superscripts: M<sup>lle</sup>, 1<sup>st</sup>, and then some
+               mathematical notations: e<sup>x</sup>, sin<sup>2</sup> <i>x</i>,
+               and some nested superscripts (exponents) too:
+               e<sup>x<sup>2</sup></sup> and f(x)<sup>g(x)<sup>a+b+c</sup></sup>
+               (where 2 and a+b+c should appear as exponents of exponents).
+          <li> <tt>text in monospace font</tt> (<code>tt</code> markup used)
+          <li> <u>underlined</u> text (<code>u</code> markup used)
+          <li> the command <code>cat</code> <var>filename</var> displays the
+               file specified by the <var>filename</var> (<code>var</code> markup
+            used to indicate a word as a variable).</li>
+        </ul>
+      <p>This paragraph includes all <def>html inline</def> elements. This includes links, such as this to <a href="http://www.w3schools.com/htmL/html_blocks.asp">the w3 schools site documenting block level versus inline level elements</a>. It also includes abbreviations, such as <abbr>HTML</abbr>, <code>&lt;code&gt;</code>, emphasized words, such as <em>this</em>, and <strong>strong</strong> words. <q>Some things are quoted inline.</q> <mark>Some things are highlighted.</mark> There are generic <span class="genericSpan">spans</span>. There are subscripts<sub>sub</sub> and superscripts<sup>sup</sup>. We also have superscripts stacked<sup>sup<sup>sup<sup>sup</sup></sup></sup></p>
+      <h3>&lt;h3&gt; Block Elements (All Flow Content that is not Phrasing Content)</h3>
+      <h4>&lt;address&gt;</h4>
+        <address>This is the address block. <a href="mailto:nobody.in.particular@gmail.com">Nobody N. Particular</a></address>
+      <h4>&lt;article&gt;</h4>
+        <article>
+          <h5>This is the article</h5>
+          <p>An article is actually a Sectioning Content element. It creates a new section in the outline of the document that is not part of the parent section's outline. The article can have any flow content as child elements.</p>
+        </article>
+      <h4>&lt;aside&gt;</h4>
+        <aside>
+          <h5>This is the aside</h5>
+          <p>An aside is actually a Sectioning Content element. It creates a new section in the outline of the document that is not part of the parent section's outline. The aside can have any flow content as child elements.</p>
+        </aside>
+      <h4>&lt;blockquote&gt;</h4>
+        <p>This is a normal paragraph preceding the blockquote. Now if you will consider what was the nature of the government of Darius, you will find it similar to the kingdom of the Turk, and therefore it was only necessary for Alexander, first to overthrow him in the field, and then to take the country from him. After which victory, Darius being killed, the state remained secure to Alexander, for the above reasons.</p>
+        <blockquote cite="http://www.w3.org/TR/2011/WD-html5-20110525/grouping-content.html#the-blockquote-element">
+          <h5>This is the blockquote</h5>
+          <p>A blockquote is a Flow Content element that is also a sectioning root. It creates a new section in the outline of the document that is not part of the parent section's outline. The blockquote can have any flow content as child elements. Semantically, the blockquote content should come from some other source and the attribution for the blockquote should come after the blockquote itself.</p>
+        </blockquote>
+        <p>This is another normal paragraph following the blockquote. When these things are remembered no one will marvel at the ease with which Alexander held the Empire of Asia, or at the difficulties which others have had to keep an acquisition, such as Pyrrhus and many more; this is not occasioned by the little or abundance of ability in the conqueror, but by the want of uniformity in the subject state.</p>
+      <h4>&lt;br&gt;</h4>
+        <p>Marry hatter ladle limb<br />
+Itch fleas worse widest snore.<br />
+An ever-wear debt Marry win<br />
+Door limb worse shorter gore.</p>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      
+      
+      
+
+    <hr>
+    <h3>&lt;h3&gt; List Related Elements</h3>
+      <p>The list related elements include unordered, ordered list, and description list (the last known as a definition list prior to HTML).</p>
+      <h4>&lt;h4&gt; Unordered Lists</h4>
+      <ul>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item, with sub-items
+          <ul>
+            <li>third item, first sub-item</li>
+            <li>third item, second sub-item, with sub-items
+              <ul>
+                <li>third item, second sub-item, first sub-item</li>
+                <li>third item, second sub-item, second sub-item, with sub-items
+                  <ul>
+                    <li>third item, second sub-item, second sub-item, first sub-item</li>
+                    <li>third item, second sub-item, second sub-item, second sub-item</li>
+                  </ul>
+                </li>
+                <li>third item, second sub-item, third sub-item</li>
+              </ul>
+            </li>
+            <li>third item, third sub-item</li>
+          </ul>
+        </li>
+        <li>fourth item</li>
+        <li>fifth item</li>
+      </ul>
+
+      <h4>&lt;h4&gt; Ordered Lists</h4>
+      <ol>
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item, with sub-items
+          <ol>
+            <li>third item, first sub-item</li>
+            <li>third item, second sub-item, with sub-items
+              <ol>
+                <li>third item, second sub-item, first sub-item</li>
+                <li>third item, second sub-item, second sub-item, with sub-items
+                  <ol>
+                    <li>third item, second sub-item, second sub-item, first sub-item</li>
+                    <li>third item, second sub-item, second sub-item, second sub-item</li>
+                  </ol>
+                </li>
+                <li>third item, second sub-item, third sub-item</li>
+              </ol>
+            </li>
+            <li>third item, third sub-item</li>
+          </ol>
+        </li>
+        <li>fourth item</li>
+        <li>fifth item</li>
+      </ol>
+
+      <h4>&lt;h4&gt; Description Lists</h4>
+      <dl>
+        <dt>First Description Term</dt>
+        <dd>This is the first description term's description block. A block </dd>
+      </dl>
+    <hr>
+    <h3>&lt;h3&gt; Table Related Elements</h3>
+      <p>The table related elements include all elements used to build tables in HTML5. It is no longer acceptable style to use table elements for formatting purposes. The elements given as examples here include: &lt;caption&gt;, &lt;table&gt;, &lt;tbody&gt;, &lt;td&gt;, &lt;tfoot&gt;, &lt;th&gt;, &lt;thead&gt; and &lt;tr&gt;. There's no good reason to use &lt;col&gt; and &lt;colgroup&gt;, since the same affect can be achieved through the use of classes.</p>
+
+      <!-- The <table> element has one attribute, the summary attribute,
+           that can be useful. It is used for accessibility to describe
+           the table (duplicate of the caption element content?). -->
+
+      <table summary="This is the table summary">
+        
+        <!-- The <caption> element, if present, must be the first child of the table
+             element. -->
+        
+        <caption>
+          This is the table caption
+        </caption>
+        
+        <!-- It makes aesthetic sense that the order of the of the <table> children
+             should be <thead> then <tbody> then <tfoot>. Note that before HTML5 the
+             <tfoot> element had to come after the <thead> element. -->
+        
+        <thead>
+            <tr>
+              
+              <!-- There is a semantic difference between a <th> element and a <td>
+                   element: the former is not meant to properly hold data content for
+                   the table, but, instead, descriptive (or definitional) data about
+                   the contents of the table--more structural than content. But, it
+                   should not be used for style purposes, even though the default
+                   styles do style <th> different from <td>. The styling should still
+                   be done using classes and css style sheets. -->
+              
+              <th></th>
+              <th></th>
+              
+              <!-- The colspan and rowspan attributes are properly structural and thus
+                   belong as part of the html content (vs style). -->
+              
+              <th colspan="3">Table Column Headers</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th></th>
+              <th>C1</th>
+              <th>C2</th>
+              <th>C3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <th rowspan="4">Table Row Headers</th>
+              <th>R1</th>
+              <td>R1 C1</td>
+              <td>R1 C2</td>
+              <td>R1 C3</td>
+            </tr>
+            <tr>
+              <th>R2</th>
+              <td>R2 C1</td>
+              <td>R2 C2</td>
+              <td>R2 C3</td>
+            </tr>
+            <tr>
+              <th>R3</th>
+              <td>R3 C1</td>
+              <td>R3 C2</td>
+              <td>R3 C3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+              <th>R4</th>
+              <th>F1</td>
+              <th>F2</td>
+              <th>F3</td>
+            </tr>
+        </tfoot>
+      </table>
+
+    <hr>
+    <h3>&lt;h3&gt; Interactive Elements</h3>
+      <h4>&lt;audio&gt;</h4>
+        <audio controls>
+          <source src="./audio/fables_01_02_aesop_64kb.mp3" type="audio/mp3">
+          Your browser does not support the audio tag
+        </audio>
+      <h4>&lt;button&gt;</h4>
+        <button id="buttonExample">This is a button</button>
+      <h4>&lt;canvas&gt;</h4>
+        <canvas id="canvasExample" height="200" width="200">This browser does not support the canvas element.</canvas>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+      <h4>&lt;&gt;</h4>
+
+    <hr>
+    <h3>&lt;h3&gt; Obsolete Inline Elements</h3>
+      <h4>&lt;marquee&gt;</h4>
+      
+
+    <hr>
+    <h3>&lt;h3&gt; Obsolete Block Elements</h3>
+        <ul>
+          <li><code>&lt;blink&gt;</code> this is the <blink>atrocious</blink></li>
+          <li><code>&lt;a&gt;</code></li>
+        </ul>
+      
+      
+      
+      
+      <h4>(h4) Headers</h4>
+      <h5>(h5) Header 5</h5>
+      <h6>(h6) Header 6</h6>
+      <h4>Paragraphs</h4>
+      <p>The contrary happens in kingdoms governed like that of France, because one can easily enter there by gaining over some baron of the kingdom, for one always finds malcontents and such as desire a change. Such men, for the reasons given, can open the way into the state and render the victory easy; but if you wish to hold it afterwards, you meet with infinite difficulties, both from those who have assisted you and from those you have crushed. Nor is it enough for you to have exterminated the family of the prince, because the lords that remain make themselves the heads of fresh movements against you, and as you are unable either to satisfy or exterminate them, that state is lost whenever time brings the opportunity.</p>
+      <p>Now if you will consider what was the nature of the government of Darius, you will find it similar to the kingdom of the Turk, and therefore it was only necessary for Alexander, first to overthrow him in the field, and then to take the country from him. After which victory, Darius being killed, the state remained secure to Alexander, for the above reasons. And if his successors had been united they would have enjoyed it securely and at their ease, for there were no tumults raised in the kingdom except those they provoked themselves.</p>
+      <p>But it is impossible to hold with such tranquillity states constituted like that of France. Hence arose those frequent rebellions against the Romans in Spain, France, and Greece, owing to the many principalities there were in these states, of which, as long as the memory of them endured, the Romans always held an insecure possession; but with the power and long continuance of the empire the memory of them passed away, and the Romans then became secure possessors. And when fighting afterwards amongst themselves, each one was able to attach to himself his own parts of the country, according to the authority he had assumed there; and the family of the former lord being exterminated, none other than the Romans were acknowledged.</p>
+      <p>When these things are remembered no one will marvel at the ease with which Alexander held the Empire of Asia, or at the difficulties which others have had to keep an acquisition, such as Pyrrhus and many more; this is not occasioned by the little or abundance of ability in the conqueror, but by the want of uniformity in the subject state.</p>
+
+      
+      <div id="sampleDIV">Divs as well. Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</div>
+      <pre><code>classic := code + blocks
+if ( this == code )
+{
+  this := ofCourse( is a &lt;pre&gt; block )
+}</code></pre>
+      <p>Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</p>
+      <blockquote>We have a blockquote. Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</blockquote>
+      <p>Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</p>
+      <aside>Then there is this aside. Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</aside>
+      <h5>h5 Tables</h5>
+      <p>Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</p>
+      <p>Lorem ipsum dolor sit amet, est wisi graeci albucius ne. Autem scaevola legendos no nec. Noster vituperatoribus te sit. Ad qui justo moderatius, vel augue reprehendunt vituperatoribus ad, vel ubique temporibus te.</p>
+    </article>
+    <footer>
+      <p>&copy 2014-2015 Paul Gourdin</p>
+    </footer>
+  </body>
+</html>

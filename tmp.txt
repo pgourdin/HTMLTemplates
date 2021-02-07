@@ -1,0 +1,17 @@
+01_Absurd_Minimum.html
+02_Bare_Minimum.html
+02a_Bare_XHTML_Minimum.xhtml
+02b_Bare_Minimum_Sample.html
+03_Simple_Minimum_with_examples.html
+03b_Reset_HTML5_Doctor.html
+03c_Reset_Vanilla.html
+03d_Reset_Universal.html
+04_Reset_Meyer.html
+04_Reset_Minimum.html
+04a_Undohtml.html
+audio
+css
+img
+js
+tmp.txt
+video

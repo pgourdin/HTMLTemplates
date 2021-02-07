@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3 Basic Content</title>
+  </head>
+  <body>
+    <div id="main">                               <!--  (1, 2)        -->
+      <h1>                                        <!--  (3)           -->
+        2b Bare Minimum Template Sample
+      </h1>
+      <p>This is a paragraph                      <!--  (4, 5, 6)     -->
+         of text. Semantically, a paragraph is    <!--  (6)           -->
+         a collection of phrasing elements
+         that have a semantic 'togetherness'.
+         Historically, text has
+         been the primary content for most
+         <abbr title="Hypertext Markup Language"> <!--  (6)           -->
+         HTML</abbr> documents, and text
+         paragraphs the most
+         common form of paragraphs.</p>
+      <p>
+         Because we are using the (default)
+         UTF-8 charset, we can embed general
+         unicode text strings in the text of
+         the document, such as
+         <span class="exampleText" lang="ar"
+         dir="rtl">الحب</span>,                   <!--  (1, 2, 7, 8)  -->
+         which is the Arabic word for love.</p>
+      <pre>Because we are using the (default)     <!--  (9)           -->
+         UTF-8 charset, we can embed general
+         unicode text strings in the text of
+         the document, such as
+         <span class="exampleText" lang="ar"
+         dir="rtl">الحب</span>,
+         which is the Arabic word for love.</pre>
+      <pre>
+Because we are using the (default)
+         UTF-8 charset, we can embed general
+         unicode text strings in the text of
+         the document, such as
+         <span class="exampleText" lang="ar"
+         dir="rtl">الحب</span>,
+         which is the Arabic word for love.</pre>
+      <pre>     
+Because we are using the (default)
+         UTF-8 charset, we can embed general
+         unicode text strings in the text of
+         the document, such as
+         <span class="exampleText" lang="ar"
+         dir="rtl">الحب</span>,
+         which is the Arabic word for love.</pre>
+      <pre>
+
+Because we are using the (default)
+         UTF-8 charset, we can embed general
+         unicode text strings in the text of
+         the document, such as
+         <span class="exampleText" lang="ar"
+         dir="rtl">الحب</span>,
+         which is the Arabic word for love.</pre>
+    </div>
+    <div id="copyrightFooter">
+      <p>&copy; 2014-2018 Paul Gourdin</p>        <!--  (10)          -->
+    </div>
+  </body>
+</html>
+
+<!--
+
+  Some Concepts and Terminology:
+
+      Historically, the first HTML specifications leaned
+      heavily to describing syntax and presentation. Later
+      specifications, especially the first inclusion of CSS,
+      started to lean toward more syntactical and semantic
+      information. With the advent of HTML5 the expectation
+      became that HTML would describe the syntax and
+      semantics of a document, leaving presentation and
+      dynamic bevahior to CSS and Javascript respectively.
+
+      This transition is not quite complete: there are still
+      remnants of presentation and behavior in HTML5 (e.g.,
+      see the behavior described in the <abbr> element, below).
+      It is not hard to find the presentational roots when
+      you scratch the surface of most HTML documentation.
+      However, the current intent of the HTML specification
+      is that HTML markup provides the syntactical and
+      semantical description of a web 'document', and that
+      the presentational/behavioral aspects are primarily
+      contained in CSS and Javascript files.
+
+      Again ... syntax is the tree structure ... we talk
+      about parents, children, siblings, etc. ... syntax
+      requires semantics to understand the structure
+
+      Block level vs inline level elements - Prior to HTML5
+        there was a general categorization of elements into
+        either block level or inline level. Intuitively, block
+        elements are paragraphs and inline elements are words
+        or phrases in paragraphs. More generally, block elements
+        are arranged vertically (with a linebreak before a
+        block) and inline elements are arranged (by default) in
+        a left-to-right, top-to-bottom order within the parent
+        block.
+
+        This strict notion is obsolete, primarily because it is
+        a presentational concept, rather than a semantic concept.
+        The Content Model (below), in HTML5, replaced the idea
+        of block-level vs inline-level in HTML. The concept does
+        survive in the CSS display property, where it properly
+        lives.
+
+      Content Model - something
+
+  Numbered Inline Comments:
+
+  (1, 2)
+
+      The <span> and <div> elements represent the prototypical
+      and generic elements for phrasing content and (block level)
+      flow content. Because they are generic, they carry no real
+      semantic meaning, other than that provided (indirectly)
+      through the "id" and "class" attributes, see (2) below.
+      As such, they should be used only when no other element
+      provides the appropriate, intended semantics.
+
+  (2)
+
+      The "id" and "class" attributes are both global attributes
+      and serve very similar purposes. They both add meta-data to
+      elements that allows for general ("class") and/or specific
+      ("id") classification of elements that is document or web
+      site specific. They come closest to allowing a way to 'name'
+      and find elements, for purposes of specifying presentational
+      (CSS) and/or dynamic (Javascript) aspects. The difference
+      between the two is that the value for an "id" attribute can
+      only be applied to exactly one element, whereas a given
+      "class" attribute value can be applied to any given number
+      of elements. A given element can have both "id" and "class"
+      attributes.
+
+      Prior to HTML5 these were the primary ways to provide
+      semantics for common div and span element classes, such
+      as headers and footers. There was an effort in the HTML5
+      specification to identify the most common semantic
+      structures and make them more standard by specifying
+      explicit elements to carry these semantic designations.
+      This includes such new elements as <header>, <footer>,
+      <article>, <section>, <nav>, <figure>, etc. The <mark>
+      element was the only new <span> level semantic element
+      added.
+
+      The best practice for "id" and "class" values is that
+      they convey semantic meaning, rather than presentational
+      or behavior connotations. In addition, don't use spaces
+      in the values.
+
+  (3)
+
+      The <h1> element is one of a set of heading content
+      elements that carry the semantics of text headers for
+      the parts of a web page that represent 'sections' of
+      content. They have such specific semantics that they
+      have their own content model category. They are ranked
+      elements, from <h1> through <h6>.
+
+      The general idea is that the lower the number the 'higher'
+      in hierarchical ranking in the documents structure. For
+      example, an <h1> element might represent the title heading
+      for the document. An <h2> element then might represent a
+      major section of the document, with a descendant <h3>
+      element of that section representing a sub-header.
+
+  (4)
+
+      The <p> element semantically represents a paragraph of text.
+      Historically, text has been the primary content data of HTML
+      documents, and <p> elements represent the most common block
+      level text element. Best practice dictates that a recognizable
+      body of text that is a paragraph should be contained in a <p>
+      element.
+
+  (5)
+
+      talk about actual text elements and text itself ...
+
+  (6)
+
+      talk about whitespace in text ... mention <pre>
+
+  (7)
+
+-->

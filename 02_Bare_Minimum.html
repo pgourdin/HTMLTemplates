@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">                          <!--  (1, 2, 3) -->
   <head>                                  <!--  (4)       -->
-    <meta charset="UTF-8" />              <!--  (2, 5, 6) -->
+    <meta charset="UTF-8" />              <!--  (5, 6, 7) -->
     <title>2 Bare Minimum</title>
   </head>
-  <body>                                  <!--  (7)       -->
+  <body>                                  <!--  (8)       -->
   </body>
 </html>
 
@@ -19,7 +19,7 @@
 
   Some Concepts and Terminology:
 
-      global attributes - the set of attributes in the HTML
+      global attributes - are the set of attributes in the HTML
       specification that can be applied to any element. The
       most commonly used global attributes related to the
       semantics of elements include: class, id, dir, lang
@@ -41,11 +41,12 @@
 
       The "lang" attribute is a global attribute. There is a
       convention to indicate the primary language of the document
-      by setting the lang attribute of the root "html" element;
+      by setting the lang attribute of the root <html> element;
       thus, it is considered part of the bare minimum template.
-      If the lang attribute is not present on the html tag the
-      browser (or web crawler) will do a best effort attempt at
-      divining the base language with the existing text content.
+      If the lang attribute is not present on the <html> element
+      the browser (or web crawler) will do a best effort attempt
+      at divining the base language with the existing text
+      contents.
 
   (3)
 
@@ -69,6 +70,22 @@
       is used to indicate the base URL for all relative URL references
       in the document.
 
+      The <head> element can contain:
+
+        ~ meta data, using the <meta> element;
+
+        ~ embedded javascript, using the <script> element;
+
+        ~ embedded CSS style information, using the <style> element;
+
+        ~ <link> elements, which are used exclusively, in modern usage,
+          to link external (CSS) style sheets to the current document;
+
+        ~ the mandatory <title> element; and,
+
+        ~ the <base> element, which is used to indicate the base URL
+          for all relative URL references in the document.
+
       In general, it is considered best practices to segregate all
       style code in external .css files, that are referenced through
       <link> elements, and all javascript in external .js files, that
@@ -77,21 +94,31 @@
 
   (5)
 
+      For empty elements, such as meta, the closing "/>" must be
+      separated by a space from the last attribute. For example,
+      
+        <tag attr="value" attr="value" />
+
+  (6)
+
       The <meta charset ...> element specifies the character encoding
       for the document. The value "UTF-8" specifies that the document
       is encoded in a common Unicode encoding. Even though "UTF-8" is
       the default for HTML5, it is still considered good form to specify
       it explicitly. (The default before HTML5 used to be "ISO-8859-1".)
 
-  (6)
+  (7)
 
       The <meta charset ...> element must be within the first 1024
       bytes in the HTML file. To ensure this, always have this element
-      be the first child under <head>. (Note, that as of 1/2016 the W3
-      org validator will give an error message if it is not within the
-      first 512 characters, an older standard.)
+      be the first child under <head> and avoid any comments before
+      this element. (Note, an older standard specified that it must be
+      within the first 512 characters.) This requirement is due to the
+      fact that html parsers will use the first 1024 characters to
+      determine the encoding of the document; thus, the explicit
+      specification of the encoding must be within that scope.
 
-  (7)
+  (8)
 
       The <body> element is the parent element for all presentable
       content of the HTML document. As we saw in the absurd minimum,
@@ -99,5 +126,5 @@
       be generated implicitly if absent. However, it makes more sense
       to make it explicit.
 
-copyright 2014-2016 Paul Gourdin
+copyright 2014-2018 Paul Gourdin
 -->
