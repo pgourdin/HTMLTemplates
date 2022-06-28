@@ -29,7 +29,7 @@
 
       HTML has evolved to specify (primarily) the logical and
       semantic structure of the text, graphic, image, video and
-      audio content, although it stills retains some historical
+      audio content, although it still retains some historical
       presentational aspects. CSS has evolved to specify the
       presentational aspect of the content. Javascript has evolved
       to specify the dynamic and interactive aspect of the content.
@@ -37,9 +37,8 @@
       An HTML document consists of a doctype declarator
       followed by a set of HTML elements. The basic logical
       structure of a document is a tree with a root element,
-      with the <html>. The root html element always has exactly
-      two children elements: the <head> element and the <body>
-      element.
+      <html>. The root html element always has exactly two
+      child elements: the <head> element and the <body> element.
 
       HTML elements follow one of two basic textual patterns:
         <tag attributes>contents</tag>
@@ -88,13 +87,13 @@
       Most dynamic aspects will be described in the corresponding
       Javascript files.
 
-      These templates, and the corresponding comments, represent
+      These templates, and their source code comments, represent
       a (generally) accepted approach to best practices for coding
       web sites and web applications. These are not meant to be an
-      exhaustive examination of very nook and cranny of modern Web
+      exhaustive examination of every nook and cranny of modern Web
       technology, or even what is and is not acceptable practice.
-      But, it is also meant to be browsed by both beginners and
-      experienced Web programmers.
+      They are meant to be browsed by both beginners and experienced
+      Web programmers.
 
       To that end, it is important to understand some key concepts
       and terminology, presented henceforth, throughout all templates
@@ -110,7 +109,9 @@
       an HTML document when they encounter 'malformed' HTML or HTML
       code that predates HTML W3C standards. The quirks mode represents
       non-standard presentation and interaction, most of which predates
-      IE 6.
+      IE 6. None of these templates will trigger quirks mode, but it
+      is useful to understand quirks mode for when you inadvertantly
+      produce a malformed HTML document or come across one.
 
   Numbered Inline Comments:
 
@@ -128,7 +129,8 @@
       acceptable versions of HTML (including treating HTML files
       as XML). The HTML5 standard did away with all of the extraneous
       DTD information present in those doctype declarations, opting
-      for a simple, clean approach.
+      for a simple, clean approach, but keeping this line as a
+      residual of that history.
 
       Note: IE does not tolerate a comment before the doctype. It
       will go into quirks mode if there is anything before the
@@ -148,5 +150,5 @@
       to browser 'favorites' and search engine results. It is the
       only meta-data that is presented in some way for the document.
 
-  copyright 2014-2018 Paul Gourdin
+  copyright 2014-2021 Paul Gourdin
 -->

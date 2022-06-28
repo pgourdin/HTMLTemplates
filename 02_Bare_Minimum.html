@@ -15,7 +15,7 @@
       This template is the bare minimum for a well-formed HTML
       document. It does not include any CSS or Javascript links.
       As such, it should be used only for simple, static HTML
-      documents that use all default styles and behavior.
+      documents that use all browser default styles and behavior.
 
   Some Concepts and Terminology:
 
@@ -39,14 +39,17 @@
 
   (2)
 
-      The "lang" attribute is a global attribute. There is a
-      convention to indicate the primary language of the document
-      by setting the lang attribute of the root <html> element;
-      thus, it is considered part of the bare minimum template.
-      If the lang attribute is not present on the <html> element
-      the browser (or web crawler) will do a best effort attempt
-      at divining the base language with the existing text
-      contents.
+      The "lang" attribute is a global attribute. It is used to
+      specify the base natural language of the text in the content
+      of the element to which it applies. When applied to the <html>
+      element, it specifies the base natural language of the page as
+      a whole. Without it, the browser (or web crawler) will do a
+      best effort attempt at divining the base natural language from
+      the text contents; as such, there is a convention to indicate
+      the base natural language of the document by setting the lang
+      attribute of the root <html> element (which is why it is
+      considered part of this bare minimum template).
+
 
   (3)
 
@@ -56,7 +59,7 @@
       separated by spaces within the element header. For empty
       elements, the closing "/>" must be separated by a space
       from the last attribute. For example,
-      
+
         <tag attr="value" attr="value" />
 
   (4)
@@ -96,7 +99,7 @@
 
       For empty elements, such as meta, the closing "/>" must be
       separated by a space from the last attribute. For example,
-      
+
         <tag attr="value" attr="value" />
 
   (6)
